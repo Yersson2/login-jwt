@@ -2,7 +2,9 @@ import mongoose from 'mongoose';
 
 mongoose.connect("mongodb://localhost/companydb", {
   useNewUrlParser : true,
-  useUnifiedTopology : true
+  useUnifiedTopology : true,
+  useFindAndModify : true,
+  useCreateIndex: true
 })
-  .then(dn => console.log('DB is connected'))
+  .then(db => console.log('DB is connected'))
   .catch(error => console.log(error))
